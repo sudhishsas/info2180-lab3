@@ -69,7 +69,7 @@ h1 span {
 #status.you-won::before {
   content: '🎉';
   display: inline-block;
-  margin-right: 8px;
+  margin-right: 8px;v
 }
 
 #status.you-won::after {
