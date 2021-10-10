@@ -12,7 +12,6 @@ window.onload = function(){
     const O_WON = 'O_WON';
     const X_WON = 'X_WON';
     const TIE = 'TIE';
-    let active =true;
     
     
     //Adding the game baord and hover for each tile on the board.
@@ -23,9 +22,7 @@ window.onload = function(){
         grid[r].classList.add('square');
         grid[r].addEventListener('mouseover', function(e) {e.target.classList.add('hover');});
         grid[r].addEventListener('mouseout', function(e) {e.target.classList.remove('hover');});
-        
-        
-        grid[r].addEventListener('click', addplay);
+        grid[r].addEventListener('click', addplay, { once: true }); // the once function causes the listener to only take one input.
 
         
 
@@ -40,11 +37,6 @@ window.onload = function(){
         function addplay(c)
         {
             
-            if(board[c.target.id] === 'X' || board[c.target.id] === 'O'){
-                console.log(board[c.target.id]);
-                console.log('di ti work');
-                c.target.addEventListener("click", handler);
-            }  
             if(curplayer == "X"){
                 c.target.classList.add('square.X');
                 c.target.innerHTML = curplayer;
